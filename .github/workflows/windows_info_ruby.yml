@@ -37,3 +37,11 @@ jobs:
 
       - name: where & version info
         run:  ./where.ps1
+
+      - name: ruby/setup-ruby ruby-head
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ruby-head
+
+      - name: where & version info
+        run:  ./where.ps1
