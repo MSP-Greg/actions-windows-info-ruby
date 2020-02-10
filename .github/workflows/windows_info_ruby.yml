@@ -43,5 +43,8 @@ jobs:
         with:
           ruby-version: ruby-head
 
+      - name: show PATH
+        run:  Write-Host $env:PATH.replace(";", "`n")
+
       - name: where & version info
         run:  ./where.ps1
