@@ -1,0 +1,39 @@
+name: Windows
+
+on: [push, pull_request]
+
+jobs:
+  Info:
+    runs-on: windows-2019
+    strategy:
+      fail-fast: false
+    steps:
+      - name: repo checkout
+        uses: actions/checkout@v2
+
+      - name: show ENV
+        run:  gci env:* | sort-object name
+
+      - name: show PATH
+        run:  Write-Host $env:PATH.replace(";", "`n")
+
+      - name: disk info
+        run: Get-CimInstance Win32_LogicalDisk
+
+      - name: dir C:/
+        run:  dir C:/
+
+      - name: dir C:/hostedtoolcache/windows
+        run:  dir C:/hostedtoolcache/windows
+
+      - name: dir C:/hostedtoolcache/windows/Ruby
+        run:  dir C:/hostedtoolcache/windows/Ruby
+
+      - name: dir C:/Program Files
+        run:  dir 'C:/Program Files'
+
+      - name: dir C:/tools
+        run:  dir C:/tools
+
+      - name: where & version info
+        run:  ./where.ps1
