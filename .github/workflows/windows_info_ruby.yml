@@ -20,20 +20,29 @@ jobs:
       - name: disk info
         run: Get-CimInstance Win32_LogicalDisk
 
-      - name: dir C:/
-        run:  dir C:/
+      - name:  dir C:/
+        shell: cmd
+        run:   dir C:\
 
-      - name: dir C:/hostedtoolcache/windows
-        run:  dir C:/hostedtoolcache/windows
+      - name:  dir C:/hostedtoolcache/windows
+        shell: cmd
+        run:   dir C:\hostedtoolcache\windows
 
-      - name: dir C:/hostedtoolcache/windows/Ruby
-        run:  dir C:/hostedtoolcache/windows/Ruby
+      - name:  dir C:/hostedtoolcache/windows/Ruby
+        shell: cmd
+        run:   dir C:\hostedtoolcache\windows\Ruby
 
-      - name: dir C:/Program Files
-        run:  dir 'C:/Program Files'
+      - name:  dir C:/Program Files
+        shell: cmd
+        run:   dir "%ProgramFiles%"
 
-      - name: dir C:/tools
-        run:  dir C:/tools
+      - name:  dir C:/Program Files (x86)
+        shell: cmd
+        run:   dir "%ProgramFiles(x86)%"
+
+      - name:  dir C:/tools
+        shell: cmd
+        run:   dir C:\tools
 
       - name: where & version info
         run:  ./where.ps1
