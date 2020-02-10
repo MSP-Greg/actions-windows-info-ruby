@@ -31,7 +31,7 @@ function EchoC($text, $color) {
 
 echo ''
 
-$where = 'ruby.exe', 'make.exe', 'bison.exe', 'ragel.exe',
+$where = 'ruby.exe', 'sed.exe', 'make.exe', 'bison.exe', 'ragel.exe',
   'libcrypto-1_1-x64.dll', 'libssl-1_1-x64.dll',
   'libeay32.dll', 'ssleay32.dll'
 foreach ($e in $where) {
