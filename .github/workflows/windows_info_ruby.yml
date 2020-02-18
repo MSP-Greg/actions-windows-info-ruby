@@ -1,3 +1,5 @@
+# last run 2020-02-18
+
 name: Windows
 
 on: [push, pull_request]
@@ -15,7 +17,7 @@ jobs:
         run:  gci env:* | sort-object name
 
       - name: show PATH
-        run:  Write-Host $env:PATH.replace(";", "`n")
+        run:  echo $env:PATH.replace([IO.Path]::PathSeparator, "`n")
 
       - name: disk info
         run: Get-CimInstance Win32_LogicalDisk
