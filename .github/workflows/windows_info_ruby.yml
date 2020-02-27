@@ -52,7 +52,7 @@ jobs:
       - name: ruby/setup-ruby ruby-head
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ruby-head
+          ruby-version: mingw
 
       - name: show PATH
         run:  Write-Host $env:PATH.replace(";", "`n")
